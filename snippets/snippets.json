@@ -320,10 +320,11 @@
       "  :scale: ${2:100 %}",
       "  :width: ${3:80 %}",
       "  :align: ${4|left,center,right|}",
+      "  :class: ${5:img-responsive img-thumbnail}",
       "",
-      "  ${5:This is the caption.}",
+      "  ${6:This is the caption.}",
       "",
-      "  ${6:This is the legend.}\n\n$0"
+      "  ${7:This is the legend.}\n\n$0"
     ],
     "description": "A figure consists of image data (including image options), an optional caption (a single paragraph), and an optional legend (arbitrary body elements)."
   },

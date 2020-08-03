@@ -1,13 +1,108 @@
 # Aplus Tools
 
 Aplus Tools is a Visual Studio Code extension designed to facilitate the creation or editing of course content published
-on the [A+ platform](https://plus.cs.aalto.fi/). This extension eases the use of the markup language used to created
-courses in A+, which is [reStructuredText](https://docutils.sourceforge.io/rst.html). In addition, this extension allows
-you to preview the current reStructuredText file within the editor, to spot syntax errors inside the reStructuredText
-files, and to organise folders and files by using icons.
+on the [A+ platform](https://plus.cs.aalto.fi/). This extension eases the use of the
+[reStructuredText](https://docutils.sourceforge.io/rst.html) language used to created courses in A+. In addition, this
+extension allows you to preview the current reStructuredText file within the editor, to spot syntax errors inside the
+reStructuredText files, and to organise folders and files by using icons.
 
 This extension is aimed at teachers, instructors, course assistants and anyone interested in creating courses in A+.
 Never the extension can be used for anyone interested on writing reStructuredText.
+
+## Requirements
+
+This extension requires Visual Studio Code version `>=1.47.3`, python version `>=3.5` and Sphinx version `1.6.7`. More
+information on how to set up your environment can be found on the [Getting Started](#getting-started) section.
+
+It is important to remember that this extension is highly related to the Aplus course template project. Therefore, you must
+also comply with the requirements mentioned in the [A+ documentation](https://apluslms.github.io/guides/quick/#requirements).
+
+## Getting Started
+
+1. [Install the extension and reload VS Code if required](https://marketplace.visualstudio.com/items?itemName=jaguarfi.aplus-tools).
+   Remember, the name of the extension is Aplus-tools.
+2. Open your course project, create a Python virtual environment for your course, and switch to the new virtual
+   environment you have just created.
+
+   ```sh
+   aptdcon --install python3-venv
+   python3 -m venv .venv_aplus
+   source .venv_aplus/bin/activate
+   pip install --upgrade pip setuptools
+   pip install wheel
+   ```
+
+   It is recommended that you install the [Python extension by Microsoft](https://marketplace.visualstudio.com/items?itemName=ms-python.python).
+   It really makes configuring the Python environment easier,since you can select the python environment from the Status
+   Bar.
+
+   ### 📘 Info
+
+   Remember to activate your virtual environment every time you open your course in Vs Code.
+
+3. Install the following Python libraries inside your virtual environment
+
+   ```sh
+   pip install sphinx==1.6.7
+   pip install sphinx-autobuild==0.7.1
+   pip install rstcheck
+   ```
+4. Press `CTRL+Shift+P` to open the **Command Palette**. Then type `Preferences: Open workspace settings (JSON)` this
+   will create an empty JSON file called **.vscode/settings.json**. Open the file and copy the following snippet of code.
+   ```
+   {
+       "restructuredtext.confPath": "${workspaceFolder}",
+       "python.pythonPath": ".venv_aplus/bin/python",
+       "restructuredtext.linter.run": "onSave",
+       "restructuredtext.linter.name": "rstcheck"
+   }
+   ```
+
+   ### ⚠️ Warning
+   If you changed the name of the virtual enviroment folder in the step 2, you must change the value of
+   `"restructuredtext.confPath":` as well. Otherwise, VS Code will not find the Python interpreter or will use the
+   wrong one.
+
+5. Create a `.rstcheck` file and add the desired [configurarion](https://pypi.org/project/rstcheck/#options). You can
+   start with the following opstions:
+   ```
+   [rstcheck]
+   report = warning
+   ignore_roles =
+       important,
+       raw-html,
+       glyphicon-info-sign,
+       glyphicon-console
+   ignore_directives =
+       styled-topic,
+       div,
+       point-of-interest,
+       annotated,
+       questionnaire,
+       submit,
+       acos-submit,
+       ae-input,
+       ae-output,
+       hidden-block,
+       youtube,
+       embedded-page,
+       aplusmeta,
+       content-tabs
+   ignore_substitutions =
+       today,
+       Aplus
+   ```
+6. One more thing you want to set up is your `conf.py` file inside your course project. If you want to avoid unnecessary
+   compilation of the libraries, you should add the name of the folder where your virtual environment is located
+   (**.venv_aplus**) to the `exclude_patterns` array. If you followed the instructions to the letter, your code should
+   look something like this:
+
+   ```sh
+   exclude_patterns = ['_build', 'exercises/solutions', '_data', 'enrollment', '.venv_aplus']
+   ```
+
+   ### 📘 Info
+   Remember to add the `.venv_aplus` folder to `.gitignore` file.
 
 ## Features
 
@@ -15,8 +110,12 @@ Never the extension can be used for anyone interested on writing reStructuredTex
 
 Specific features of the [RestructuredText extension][restructuredtext]
 - Syntax Highlighting
-- Code Snippets
 - Live Preview
+  Use the following shortcuts to use the Live Preview
+
+  - `Ctrl+Shift+R` to open the in a new tab Preview
+  - `Ctrl+K Ctrl+R` to open the Preview in a new Editor Group
+
 - Section Builder
 - Linter
 - IntelliSense (Experimental)
@@ -110,15 +209,16 @@ Specific features of [Aplus Tools extension](https://github.com/jaguarfi/vscode-
 
 | Extension             | Description                                                       | Stats                                                                                                              |
 | --------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| [lexstudio.restructuredtext][restructuredtext]   | provides a set of tools to visualise and debug your `.rst` files. | [![GitHub issues][1]][2] [![GitHub stars][3]][4] [![Build Status][5]][6] [![Current Version][7]][restructuredtext] |
+| [lexstudio.restructuredtext][restructuredtext]   | provides a set of tools to visualise and debug your `.rst` files. | [![GitHub issues][1]][2] [![GitHub stars][3]][4] [![Build Status][5]][6] |
 | [Pkief.material-icon-theme][Material Icon Theme] | is basically a visual extension that add icons to the folders.    | [![GitHub issues][8]][9] [![GitHub stars][10]][11] [![GitHub license][12]][13]                                     |
 
 [restructuredtext]: https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext
 [material icon theme]: https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme
+
 [1]: https://img.shields.io/github/issues/vscode-restructuredtext/vscode-restructuredtext
-[2]: https://github.com/vscode-restructuredtext/vscode-restructuredtext/stargazers
+[4]: https://github.com/vscode-restructuredtext/vscode-restructuredtext/stargazers
 [3]: https://img.shields.io/github/stars/vscode-restructuredtext/vscode-restructuredtext
-[4]: https://github.com/vscode-restructuredtext/vscode-restructuredtext/issues
+[2]: https://github.com/vscode-restructuredtext/vscode-restructuredtext/issues
 [5]: https://img.shields.io/azure-devops/build/lextudio/vscode-restructuredtext/2/master.svg
 [6]: https://dev.azure.com/lextudio/vscode-restructuredtext/_build/latest?definitionId=2&branchName=master
 [7]: https://img.shields.io/visual-studio-marketplace/v/lextudio.restructuredtext.svg
@@ -128,78 +228,6 @@ Specific features of [Aplus Tools extension](https://github.com/jaguarfi/vscode-
 [11]: https://github.com/PKief/vscode-material-icon-theme/stargazers
 [12]: https://img.shields.io/github/license/PKief/vscode-material-icon-theme
 [13]: https://github.com/PKief/vscode-material-icon-theme/blob/master/LICENSE.md
-
-## Requirements
-
-This extension requires Visual Studio Code version >=1.43.0, and python version >=3.5 and Sphinx version 1.7. More
-information on how to set up your environment can be found on the [Getting Started](#getting-started) section. It is
-important to remember that this extension is highly related to the Aplus course template project. Therefore, you must
-also comply with the requirements mentioned in the [A+ documentation](https://apluslms.github.io/guides/quick/#requirements).
-
-## Getting Started
-
-1. [Install the extension and reload VS Code](https://code.visualstudio.com/docs/editor/extension-gallery). Remember,
-   the name of the extension is Aplus tools.
-2. Open your course project, create a Python virtual environment for your course, and switch to the new virtual
-   environment you have just created.
-
-   ```sh
-   aptdcon --install python3-venv
-   python3 -m venv venv_aplus
-   source venv_aplus/bin/activate
-   ```
-
-   > ### 📘 Info
-   >
-   > Remember to use your virtual environment every time you open your course project.
-
-3. Install the following Python libraries inside your virtual environment
-
-   ```sh
-   pip install sphinx==1.6.7 sphinx-autobuild==0.7.1
-   pip install rstcheck
-   ```
-
-4. Create a `.rstcheck` file and add the desired [configurarion](https://pypi.org/project/rstcheck/#options). For
-   example:
-   ```
-   [rstcheck]
-   report = warning
-   ignore_roles =
-       important,
-       raw-html,
-       glyphicon-info-sign,
-       glyphicon-console
-   ignore_directives =
-       styled-topic,
-       div,
-       point-of-interest,
-       annotated,
-       questionnaire,
-       submit,
-       acos-submit,
-       ae-input,
-       ae-output,
-       hidden-block,
-       youtube,
-       embedded-page,
-       aplusmeta,
-       content-tabs
-   ignore_substitutions =
-       today,
-       Aplus
-   ```
-5. One more thing you want to set up is your `config.py` file inside your course project. If you want to avoid unnecessary
-   compilation of the libraries, you should add the name of the folder where your virtual environment is located. For
-   example:
-
-   ```sh
-   exclude_patterns = ['_build', 'exercises/solutions', '_data', 'enrollment', 'venv_aplus']
-   ```
-
-   > ### 📘 Info
-   >
-   > Remember to add the `venv_aplus` folder also to your `.gitignore`
 
 ## Issues, requests and contributions
 
