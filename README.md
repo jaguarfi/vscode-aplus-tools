@@ -207,14 +207,14 @@ If you come across a problem with the extension or you want to request a new fea
 [file an issue](https://github.com/jaguarfi/vscode-aplus-toolsCONTRIBUTING.md#issues). On the contrary, if you want to
 solve an existing issue, you can [create a pul request](https://github.com/jaguarfi/vscode-aplus-tools/pulls).
 
-Contributions are always welcome!. Please check the [contributing guide](CONTRIBUTING.md)
+Contributions are always welcome!. Please check the [contributing guide](https://github.com/jaguarfi/vscode-aplus-tools/blob/master/CONTRIBUTING.md)
 
 ---
 
 ### For more information
 
-- [Aplus Tools Documentation](./docs/index.md)
+- [Aplus Tools Documentation](https://github.com/jaguarfi/vscode-aplus-tools/blob/master/docs/index.md)
 - [A+ Manual](https://plus.cs.aalto.fi/aplus-manual/master/)
-- [Contact Us](mailto:aplusguru@aalto.fi)
+- Contact us at <aplusguru@aalto.fi>
 
 

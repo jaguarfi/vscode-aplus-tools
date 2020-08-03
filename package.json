@@ -1,17 +1,18 @@
 {
 	"name": "aplus-tools",
 	"displayName": "Aplus Tools",
-  "version": "0.1.0",
+  "version": "0.1.1",
 	"icon": "images/logo.png",
 	"galleryBanner": {
-		"color": "#C80000",
+		"color": "#3073AD",
 		"theme": "dark"
 	},
 	"description": "Aplus Tools allows teachers, instructors, course assistants and anyone interested in creating courses for the A+ platform, to create course content without having to learn every single detail about reStructuredText. It also provides tools to quickly preview changes, and spot syntaxs errors.",
 	"publisher": "jaguarfi",
 	"engines": {
 		"vscode": "^1.47.0"
-	},
+  },
+  "markdown":"github",
 	"keywords": [
 		"aplus",
 		"aalto",
@@ -97,5 +98,14 @@
 		"mocha": "^7.1.2",
 		"typescript": "^3.8.3",
 		"vscode-test": "^1.3.0"
-	}
+  },
+  "bugs": {
+    "url": "https://github.com/jaguarfi/vscode-aplus-tools/issues",
+    "email": "smcbreen@microsoft.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jaguarfi/vscode-aplus-tools.git"
+  },
+  "homepage": "https://github.com/jaguarfi/vscode-aplus-tools/blob/master/README.md"
 }

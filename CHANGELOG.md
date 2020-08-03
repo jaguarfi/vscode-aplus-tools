@@ -6,6 +6,10 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
+## [0.1.1] - 2020-08-03
+### Changed
+- Change `galleryBanner` values in the packaje.json file
+
 ## [0.1.0] - 2020-08-03
 ### Added
 - Pack the [lexstudio.restructure](https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext) extension.
