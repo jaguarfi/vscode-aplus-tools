@@ -14,7 +14,7 @@ In both cases, you must read the following instructions to guide you through the
 ## Issues
 
 If you have experienced problems while using the extension, or if you have found a bug or if you want to recommend a new
-feature, you can create a new issue in our [GitHub repository](https://github.com/jaguarfi/vscode-aplus-tools/issues).
+feature, you can create a new issue in our [GitHub repository](https://github.com/apluslms/vscode-aplus-tools/issues).
 In order to create new issues, you  must adhere to the following guidelines.
 
 1. First and most important, use proper language, respect others, and be polite with your comments.

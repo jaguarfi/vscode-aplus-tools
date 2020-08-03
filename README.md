@@ -47,24 +47,26 @@ also comply with the requirements mentioned in the [A+ documentation](https://ap
    pip install sphinx-autobuild==0.7.1
    pip install rstcheck
    ```
+
 4. Press `CTRL+Shift+P` to open the **Command Palette**. Then type `Preferences: Open workspace settings (JSON)` this
    will create an empty JSON file called **.vscode/settings.json**. Open the file and copy the following snippet of code.
+
    ```
    {
        "restructuredtext.confPath": "${workspaceFolder}",
-       "python.pythonPath": ".venv_aplus/bin/python",
        "restructuredtext.linter.run": "onSave",
        "restructuredtext.linter.name": "rstcheck"
    }
    ```
 
    ### ⚠️ Warning
+
    If you changed the name of the virtual enviroment folder in the step 2, you must change the value of
    `"restructuredtext.confPath":` as well. Otherwise, VS Code will not find the Python interpreter or will use the
    wrong one.
 
-5. Create a `.rstcheck` file and add the desired [configurarion](https://pypi.org/project/rstcheck/#options). You can
-   start with the following opstions:
+5. Create a `.rstcheck.cfg` file and add the desired [configuration](https://pypi.org/project/rstcheck/#options). You can
+   start with the following options:
    ```
    [rstcheck]
    report = warning
@@ -102,6 +104,7 @@ also comply with the requirements mentioned in the [A+ documentation](https://ap
    ```
 
    ### 📘 Info
+
    Remember to add the `.venv_aplus` folder to `.gitignore` file.
 
 ## Features
@@ -109,6 +112,7 @@ also comply with the requirements mentioned in the [A+ documentation](https://ap
 ### RestructuredText
 
 Specific features of the [RestructuredText extension][restructuredtext]
+
 - Syntax Highlighting
 - Live Preview
   Use the following shortcuts to use the Live Preview
@@ -122,13 +126,13 @@ Specific features of the [RestructuredText extension][restructuredtext]
 
 ### Material Folder icon
 
-Specific features of the [Material Icon Theme extension][Material Icon Theme]
+Specific features of the [Material Icon Theme extension][material icon theme]
 
 - Adorns the "document tree display" with icons.
 
 ### Aplus Tools
 
-Specific features of [Aplus Tools extension](https://github.com/jaguarfi/vscode-aplus-tools)
+Specific features of [Aplus Tools extension](https://github.com/apluslms/vscode-aplus-tools)
 
 - Tasks Provider
 
@@ -201,20 +205,19 @@ Specific features of [Aplus Tools extension](https://github.com/jaguarfi/vscode-
 
   #### Local
 
-  | Snippet     | Description                                                                                                                                                                                  |
-  | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-  | ap-readmore | You can find information about this in the [config.py](https://github.com/apluslms/course-templates/blob/57ac4208886f759772ff0e40135d301c2dff3159/conf.py#L48) file of your course template. |
+  | Snippet     | Description                                                                                                                                                                                |
+  | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+  | ap-readmore | You can find information about this in the [conf.py](https://github.com/apluslms/course-templates/blob/57ac4208886f759772ff0e40135d301c2dff3159/conf.py#L48) file of your course template. |
 
 ### Included Extensions
 
-| Extension             | Description                                                       | Stats                                                                                                              |
-| --------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| [lexstudio.restructuredtext][restructuredtext]   | provides a set of tools to visualise and debug your `.rst` files. | [![GitHub issues][1]][2] [![GitHub stars][3]][4] [![Build Status][5]][6] |
-| [Pkief.material-icon-theme][Material Icon Theme] | is basically a visual extension that add icons to the folders.    | [![GitHub issues][8]][9] [![GitHub stars][10]][11] [![GitHub license][12]][13]                                     |
+| Extension                                        | Description                                                       | Stats                                                                          |
+| ------------------------------------------------ | ----------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| [lexstudio.restructuredtext][restructuredtext]   | provides a set of tools to visualise and debug your `.rst` files. | [![GitHub issues][1]][2] [![GitHub stars][3]][4] [![Build Status][5]][6]       |
+| [Pkief.material-icon-theme][material icon theme] | is basically a visual extension that add icons to the folders.    | [![GitHub issues][8]][9] [![GitHub stars][10]][11] [![GitHub license][12]][13] |
 
 [restructuredtext]: https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext
 [material icon theme]: https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme
-
 [1]: https://img.shields.io/github/issues/vscode-restructuredtext/vscode-restructuredtext
 [4]: https://github.com/vscode-restructuredtext/vscode-restructuredtext/stargazers
 [3]: https://img.shields.io/github/stars/vscode-restructuredtext/vscode-restructuredtext
@@ -232,17 +235,15 @@ Specific features of [Aplus Tools extension](https://github.com/jaguarfi/vscode-
 ## Issues, requests and contributions
 
 If you come across a problem with the extension or you want to request a new feature, please
-[file an issue](https://github.com/jaguarfi/vscode-aplus-toolsCONTRIBUTING.md#issues). On the contrary, if you want to
-solve an existing issue, you can [create a pul request](https://github.com/jaguarfi/vscode-aplus-tools/pulls).
+[file an issue](https://github.com/apluslms/vscode-aplus-tools/issues). On the contrary, if you want to
+solve an existing issue, you can [create a pull request](https://github.com/apluslms/vscode-aplus-tools/pulls).
 
-Contributions are always welcome!. Please check the [contributing guide](https://github.com/jaguarfi/vscode-aplus-tools/blob/master/CONTRIBUTING.md)
+Contributions are always welcome!. Please check the [contributing guide](https://github.com/apluslms/vscode-aplus-tools/blob/master/CONTRIBUTING.md)
 
 ---
 
 ### For more information
 
-- [Aplus Tools Documentation](https://github.com/jaguarfi/vscode-aplus-tools/blob/master/docs/index.md)
+- [Aplus Tools Documentation](https://github.com/apluslms/vscode-aplus-tools/blob/master/docs/index.md)
 - [A+ Manual](https://plus.cs.aalto.fi/aplus-manual/master/)
 - Contact us at <aplusguru@aalto.fi>
-
-

@@ -6,6 +6,11 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
+## [0.1.3] - 2021-01-14
+### Fixed
+- Update the **README.md** file
+- Transfer repository from jaguarfi to the apluslms organisation
+
 ## [0.1.2] - 2020-08-03
 ### Changed
 - Update **README.md** file with more detailed information on how to set up the extension
