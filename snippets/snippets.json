@@ -1,0 +1,562 @@
+{
+  "Aplus styled topic": {
+    "prefix": "ap-styled-topic",
+    "body": [
+      ".. styled-topic::",
+      "",
+      "  Main questions: ",
+      "    ${1:What is the basic syntax of RST?}",
+      "  ",
+      "  Topics: ",
+      "    ${2:In this section, we will talk about:}",
+      "",
+      "    * `${3:Section one}`_",
+      "  ",
+      "  Requirements:",
+      "    #. ${4:You only need basic computing and programming skills, prior knowledge about markup languages might be beneficial.}",
+      "    #. ${5:A basic environment setup, as detailed in `Module 2 <https://plus.cs.fi/aplus-manual/setup/first_steps>`_.}",
+      "",
+      "  Estimated working time:",
+      "    ${6:30 min}",
+      "",
+      "",
+      "${3:Section one}",
+      "-----------"
+    ],
+    "description": [
+      "Styled topic inserts topic elements that allow creating a brief introduction to the chapter/section."
+    ]
+  },
+  "Aplus annotated code": {
+    "prefix": "ap-annotated-code",
+    "body": [
+      ".. annotated::",
+      "  ",
+      "  .. code-block:: ${1:language}",
+      "    :caption: ${2:This is a caption}",
+      "    :name: ${3:role-code}",
+      "",
+      "    The download role -> 1«:»2«download»3«:»4«`»5«Any text </download/file.csv>»6«`»",
+      "  ",
+      "  .. annotation::",
+      "",
+      "    Colon opening",
+      "",
+      "  .. annotation::",
+      "",
+      "    Role name",
+      "",
+      "  .. annotation::",
+      "",
+      "    Closing colon",
+      "",
+      "  .. annotation::",
+      "",
+      "    Back quote opening",
+      "",
+      "  .. annotation::",
+      "",
+      "    Role content",
+      "",
+      "  .. annotation::",
+      "",
+      "    Closing backquote",
+      ""
+    ],
+    "description": [
+      "Annotated code allows you to add a code block that can be associated to interactive annotations that highlight the piece of code",
+      "being explained."
+    ]
+  },
+  "Aplus Tab": {
+    "prefix": "ap-tab",
+    "body": [
+      ".. content-tabs::",
+      "",
+      "  .. tab-container:: ${1:tab-key-1}",
+      "    :title: ${2:Tab title one}",
+      "",
+      "    Content",
+      "",
+      "  .. tab-container:: ${3:tab-key-2}",
+      "    :title: ${3:Tab title two}",
+      "",
+      "    .. code-block:: rst",
+      "      :caption: caption",
+      "      :name: target-name",
+      "      :emphasize-lines: 1,2",
+      "    ",
+      "      Insert Your Code here.",
+      "      Remember, you can add several lines of code.",
+      "\n"
+    ],
+    "description": "None"
+  },
+  "Aplus active element": {
+    "prefix": "ap-active elements",
+    "body": [
+      ".. ae-input:: ${1:min_input_key}",
+      "  :title: ${2:Input title}",
+      "  :width: ${3:50%}",
+      "  :height: ${4:34px}",
+      "  :class: ${5:active-element left}",
+      "",
+      ".. ae-output:: ${6:min_output}",
+      "  :config: ${7:exercises/aelements/minimal/config.yaml}",
+      "  :inputs: ${1:min_input_key}",
+      "  :title: ${8:Output title}",
+      "  :width: ${9:50%}",
+      "  :class: ${10:active-element left}",
+      "",
+      ".. rst-class:: ${11:clear-float}",
+      "",
+      "----",
+      ""
+    ],
+    "description": "Active elements are interactive tools that process user input asynchronously in the same way as exercise graders do. However, active elements are usually not graded with points. Instead, they are used as visualizations or other such tools that support the students' learning of the content."
+  },
+  "Aplus pick questionnaire": {
+    "prefix": "ap-pick-questionaire",
+    "body": [
+      ".. questionnaire:: ${1:key_value} ${2:20}",
+      "  :title: ${3:A simple multiple-choice questionnaire}",
+      "  :submissions: ${4:3}",
+      "",
+      "  .. pick-one:: ${5:10}",
+      "",
+      "    ${6:Subdirective ``pick-one`` defines a single-choice question.",
+      "    When :math:`(x + 1)^3 = 27`, what is :math:`x`?}",
+      "",
+      "    a. 9",
+      "    *b. 2",
+      "    c. 3",
+      "",
+      "    a § Not quite. Remember the cube root.",
+      "    b § Correct!",
+      "    c § Rather close. Remember that you can add or subtract the same number to the both sides of the equation.",
+      "",
+      "  .. pick-any:: ${7:10}",
+      "",
+      "    ${8:Subdirective ``pick-any`` defines a multiple-choice question.",
+      "",
+      "    When :math:`(x + 1)^2 = 16`, what is :math:`x`?}",
+      "",
+      "    a. 4",
+      "    *b. an integer",
+      "    *c. 3",
+      "    d. an irrational number",
+      "    e. -3",
+      "    *f. -5",
+      "",
+      "    a § Rather close. Remember that you can add or subtract the same number to the both sides of the equation.",
+      "    b § Correct!",
+      "    c § Correct!",
+      "    d § No. This equation has a nice and easy solution.",
+      "    e § Remember that :math:`x^2 = q \\leftrightarrow x = \\pm \\sqrt{q}`",
+      "    f § Correct!",
+      ""
+    ],
+    "description": "Pick questionnaires are questionnaires that allow you to create questionnaires with the pick-one or pick-many inputs"
+  },
+  "Aplus free-text questionnaire": {
+    "prefix": "ap-free-questionnaire",
+    "body": [
+      ".. questionnaire:: ${1:key_value} A",
+      "  :submissions: ${2:4}",
+      "  :points-to-pass: ${3:15}",
+      "",
+      "  .. freetext:: ${4:20} string-ignorews-ignorequotes-requirecase",
+      "    :length: ${5:10}",
+      "",
+      "    A textual input can be compared with the model solution as integer, float or string.",
+      "    Here the correct answer is \"test\". Surrounding quotes are ignored in the solution",
+      "    as well as whitespace everywhere (modifiers ignorequotes and ignorews).",
+      "",
+      "    test",
+      "    !test § Follow the instruction.",
+      "    regexp:Test|TEST § Use the lower case!",
+      "",
+      "  .. freetext:: ${6:10} regexp",
+      "",
+      "    This question accepts either \"red\" or \"blue\" as the correct answer.",
+      "    The model solution is a regular expression.",
+      "",
+      "    red|blue",
+      ""
+    ],
+    "description": "Free-text questionnaires are questionnaires with text inputs."
+  },
+  "Aplus submittable exercise": {
+    "prefix": "ap-submittable",
+    "body": [
+      ".. submit:: ${1:key} ${2:10}",
+      "  :config: exercises/${3:hello_python/config.yaml}",
+      ""
+    ],
+    "description": "Submittable exercises allow you to submit exercises to the mooc-grader"
+  },
+  "Aplus LTI exercise": {
+    "prefix": "ap-lti",
+    "body": [
+      ".. submit:: ${1:key} ${2:10}",
+      "  :lti: ${3:Rubyric}",
+      "  :url: ${4:/aplus/123}",
+      "  :lti_resource_link_id: ${5:example1}",
+      ""
+    ],
+    "description": "LTI exercises allow you to submit exercises that is connected to an external tool via LTI launch protocol."
+  },
+  "Aplus meta": {
+    "prefix": "ap-aplusmeta",
+    "body": [
+      ".. aplusmeta::",
+      "  :introduction: ${1:<h3>Course administration</h3>",
+      "    <p>In this section we will cover the following topics</p>}",
+      "  :open-time: ${2:2020-10-31 20:00:00}",
+      "  :close-time: ${3:2020-11-31 20:00:00}",
+      "  :audience: ${4|internal,external,registered|}",
+      "  :hidden: ",
+      ""
+    ],
+    "description": "Aplusmeta allows you to define individual settings for each module."
+  },
+  "Aplus hidden block": {
+    "prefix": "ap-hidden-block",
+    "body": [
+      ".. hidden-block:: ${1:name}",
+      "  :label: ${2:Show/Hide>",
+      "  :visible: ",
+      "",
+      "  Hidden content here!",
+      ""
+    ],
+    "description": "Aplusmeta allows you to define individual settings for each module."
+  },
+  "Aplus point of interest": {
+    "prefix": "ap-point-of-interest",
+    "body": [
+      ".. point-of-interest:: ${1:Title text}",
+      "  :id: ${2:unique-id}",
+      "  :class: ${3:bg-success}",
+      "  :height: ${4:400px}",
+      "  :columns: ${5:3 7}",
+      "  :not_in_slides: ",
+      "  :no_poi_box: ",
+      "",
+      "  Content of point-of-interest here.",
+      "",
+      "  ::newcol",
+      "",
+      "  New column starts here. If ``:columns:`` option not present columns of equal width will be created.",
+      "  (The presentation maker slides do not support the newcol feature.)",
+      ""
+    ],
+    "description": "Creates points of interest within the course content.",
+    "Aplus Acos exercise": {
+      "prefix": "ap-acos-exercise",
+      "body": [
+        ".. acos-submit:: ${1:somekey} ${2:100}",
+        "  :title: ${3:My title}",
+        "  :url: ${4:/aplus/draganddrop/draganddrop-example/revealdemo}",
+        ""
+      ],
+      "description": "Acos exercise embeds a submittable acos exercise into the course content. Remember to configure your conf.py file."
+    }
+  },
+  "Aplus HTML div": {
+    "prefix": "ap-html-div",
+    "body": [
+      ".. div:: ${1:css-class-1 css-class-2}",
+      "",
+      "  Element contents.",
+      ""
+    ],
+    "description": "Create"
+  },
+  "Aplus youtube video": {
+    "prefix": "ap-youtube",
+    "body": [
+      ".. youtube:: ${1:hM4I58TA72g}",
+      "  :video-height: ${2:432}",
+      "  :video-width: ${3:768}",
+      ""
+    ],
+    "description": ""
+  },
+  "Aplus embedded page": {
+    "prefix": "ap-embedded-page",
+    "body": [
+      ".. embedded-page:: ${1:https://apluslms.github.io/}",
+      "  :frame-height: ${2:500}",
+      "  :frame-width: ${3:800}",
+      ""
+    ],
+    "description": ""
+  },
+  "Aplus story": {
+    "prefix": "ap-story",
+    "body": [
+      ".. story:: ${1:story_name}",
+      "  :story-height: ${2:690}",
+      "  :story-width: ${3:865}",
+      ""
+    ],
+    "description": ""
+  },
+  "image": {
+    "prefix": "ap-image",
+    "body": [
+      ".. image:: /images/${TM_DIRECTORY/^.+\\/(.*)$/$1/}/${1:image.png}",
+      "  :scale: ${2:100 %}",
+      "  :width: ${3:80 %}",
+      "  :align: ${4|left,center,right|}\n\n$0"
+    ],
+    "description": "Insert and image"
+  },
+  "figure": {
+    "prefix": "ap-figure",
+    "body": [
+      ".. figure:: /images/${TM_DIRECTORY/^.+\\/(.*)$/$1/}/${1:image.png}",
+      "  :scale: ${2:100 %}",
+      "  :width: ${3:80 %}",
+      "  :align: ${4|left,center,right|}",
+      "",
+      "  ${5:This is the caption.}",
+      "",
+      "  ${6:This is the legend.}\n\n$0"
+    ],
+    "description": "A figure consists of image data (including image options), an optional caption (a single paragraph), and an optional legend (arbitrary body elements)."
+  },
+  "code block": {
+    "prefix": "ap-code-block",
+    "body": [
+      ".. code-block:: ${1:language}",
+      "  :caption: ${2:caption}",
+      "",
+      "  Insert Your Code here.",
+      "  Remember, you can add several lines of code.",
+      "",
+      "$0"
+    ],
+    "description": [
+      "The code directive constructs a literal block. If the code language is specified, the content is \n\t\t\tparsed by the Pygments syntax highlighter and tokens are stored in nested inline elements with \n\t\t\tclass arguments according to their syntactic category."
+    ]
+  },
+  "literalinclude": {
+    "prefix": "ap-literalinclude",
+    "body": [
+      ".. literalinclude:: ${1:file-path}",
+      "  :language: ${2:language}",
+      "  :linenos:\n$0"
+    ],
+    "description": "Literal Include"
+  },
+  "structured reference": {
+    "prefix": "ap-structured-reference",
+    "body": [
+      "`${1:text shown in your document}`_\n",
+      ".. You can place the following line at the end of the document.\n",
+      ".. _${1:text shown in your document}: ${2:http://link}\n",
+      "$0"
+    ],
+    "description": ""
+  },
+  "link": {
+    "prefix": "ap-link",
+    "body": "`${1:Title} <${2:http://link}>`_ ",
+    "description": "Link"
+  },
+  "attention": {
+    "prefix": "ap-attention",
+    "body": [
+      ".. attention::",
+      "",
+      "  ${1:This is the attention paragraph.}\n\n$0"
+    ],
+    "description": "Attention Admonition."
+  },
+  "note": {
+    "prefix": "ap-note",
+    "body": [
+      ".. note::",
+      "",
+      "  ${1:This a note paragraph.}\n\n$0"
+    ],
+    "description": "Note Admonition."
+  },
+  "warning": {
+    "prefix": "ap-warning",
+    "body": [
+      ".. warning::",
+      "",
+      "  ${1:This is a warning paragraph.}\n\n$0"
+    ],
+    "description": "Warning Admonition."
+  },
+  "error": {
+    "prefix": "ap-error",
+    "body": [
+      ".. error::",
+      "",
+      "  ${1:text}\n$0"
+    ],
+    "description": "Error Admonition."
+  },
+  "hint": {
+    "prefix": "ap-hint",
+    "body": [
+      ".. hint::",
+      "",
+      "  ${1:This is a hint paragraph.}\n$0"
+    ],
+    "description": "Hint Admonition."
+  },
+  "important": {
+    "prefix": "ap-important",
+    "body": [
+      ".. important::",
+      "",
+      "  ${1:text}\n$0"
+    ],
+    "description": "Important Admonition."
+  },
+  "caution": {
+    "prefix": "ap-caution",
+    "body": [
+      ".. caution::",
+      "",
+      "  ${1:This is a caution paragraph.}\n\n$0"
+    ],
+    "description": "Caution Admonition."
+  },
+  "danger": {
+    "prefix": "ap-danger",
+    "body": [
+      ".. danger::",
+      "",
+      "  ${1:This is a danger paragraph.}\n\n$0"
+    ],
+    "description": "Danger Admonition."
+  },
+  "tip": {
+    "prefix": "ap-tip",
+    "body": [
+      ".. tip::",
+      "",
+      "  ${1:This is a tip paragraph.}\n\n$0"
+    ],
+    "description": "Tip Admonition."
+  },
+  "admonition": {
+    "prefix": "ap-admonition",
+    "body": [
+      ".. admonition:: ${1:Admonition title.}",
+      "  :class: ${2:alert alert-warning}",
+      "",
+      "  ${3:Insert the content of your admonition in here.}\n\n$0"
+    ],
+    "description": "Admonitions are specially marked topics that can appear anywhere an ordinary body element can."
+  },
+  "Sidebar": {
+    "prefix": "ap-sidebar",
+    "body": [
+      ".. sidebar:: ${1:Title} ",
+      "",
+      "  ${2:Write your text here!}.",
+      "\n"
+    ],
+    "description": "None"
+  },
+  "rubric": {
+    "prefix": "ap-rubric",
+    "body": [
+      ".. rubric::",
+      "",
+      "  ${1:text}\n$0"
+    ],
+    "description": "The rubric directive inserts a rubric element into the document tree. A rubric is like an informal heading that doesn't correspond to the document's structure."
+  },
+  "epigraph": {
+    "prefix": "ap-epigraph",
+    "body": [
+      ".. epigraph::",
+      "",
+      "  ${1:I'm not a great programmer; I'm just a good programmer with great habits.}",
+      "",
+      "  -- ${2:Kent Beck }\n$0"
+    ],
+    "description": "An epigraph is an apposite (suitable, apt, or pertinent) short inscription, often a quotation or poem, at the beginning of a document or section."
+  },
+  "doc": {
+    "prefix": "ap-doc",
+    "body": ":doc:`/${1:text}` $0",
+    "description": "Doc reference"
+  },
+  "ref": {
+    "prefix": "ap-ref",
+    "body": ":ref:`${1:Label}` $0",
+    "description": "Label reference"
+  },
+  "label": {
+    "prefix": "ap-label",
+    "body": ".. _${1:Title}:\n\n$0",
+    "description": "Label"
+  },
+  "download": {
+    "prefix": "ap-download",
+    "body": ":download:`${1:Title} <${2:path}>` $0",
+    "description": "Download"
+  },
+  "numref": {
+    "prefix": "ap-numref",
+    "body": ":numref:`${1:Title} <${2:figure}>` $0",
+    "description": "Cross-referencing Figure"
+  },
+  "math role": {
+    "prefix": "ap-math-role",
+    "body": ":math:`${1:expression}` $0",
+    "description": "Math expression"
+  },
+  "math directive": {
+    "prefix": "math-directive",
+    "body": [
+      ".. math::",
+      "",
+      "   (a + b)^2  &=  (a + b)(a + b) \\\\",
+      "              &=  a^2 + 2ab + b^2"
+    ],
+    "description": "Math expresion"
+  },
+  "command": {
+    "prefix": "ap-command",
+    "body": ":command:`${1:Title}` $0",
+    "description": "Command"
+  },
+  "file": {
+    "prefix": "ap-file",
+    "body": ":file:`${1:path}` $0",
+    "description": "File"
+  },
+  "key": {
+    "prefix": "ap-keyboard",
+    "body": ":kbd:`${1:shortcut}` $0",
+    "description": "Keyboard Shortcut"
+  },
+  "menuselection": {
+    "prefix": "ap-menuselection",
+    "body": ":menuselection:`${1:Title} --> ${2:Title2}` $0",
+    "description": "Menu Selection"
+  },
+  "Aplus readmore": {
+    "prefix": "ap-readmore",
+    "body": [
+      ".. rst-class:: pull-right ",
+      "",
+      "| :glyphicon-info-sign:`\\ ` **Read more about**  `${1:topic} <${2:https://}>`_",
+      "",
+      "|",
+      "\n$0"
+    ],
+    "description": "This is a right-floated element that  is used to invite the reader to consult an specific website"
+  }
+}

@@ -1,0 +1,101 @@
+{
+	"name": "aplus-tools",
+	"displayName": "Aplus Tools",
+  "version": "0.1.0",
+	"icon": "images/logo.png",
+	"galleryBanner": {
+		"color": "#C80000",
+		"theme": "dark"
+	},
+	"description": "Aplus Tools allows teachers, instructors, course assistants and anyone interested in creating courses for the A+ platform, to create course content without having to learn every single detail about reStructuredText. It also provides tools to quickly preview changes, and spot syntaxs errors.",
+	"publisher": "jaguarfi",
+	"engines": {
+		"vscode": "^1.47.0"
+	},
+	"keywords": [
+		"aplus",
+		"aalto",
+    "plusa",
+    "restructuredtext"
+	],
+	"categories": [
+		"Other",
+		"Extension Packs",
+		"Programming Languages",
+		"Snippets"
+	],
+	"extensionPack": [
+		"lextudio.restructuredtext",
+		"PKief.material-icon-theme"
+	],
+	"activationEvents": [
+		"onCommand:aplustools.createModule",
+		"onCommand:workbench.action.tasks.runTask"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"problemMatchers": [
+			{
+				"name": "apluProblemMatcher",
+				"owner": "aplus",
+        		"fileLocation": ["relative", "${workspaceFolder}"]
+			}
+		],
+		"taskDefinitions": [
+			{
+				"type": "aplus"
+			}
+		],
+		"languages": [
+			{
+				"id": "restructuredtext",
+				"aliases": [
+					"reStructuredText",
+					"restructuredtext",
+					"ReStructured Text",
+					"reStructured Text",
+					"RST",
+					"ReST",
+					"reST"
+				],
+				"extensions": [
+					".rst",
+					".rest"
+				]
+			}
+		],
+		"commands": [
+			{
+				"command": "aplustools.createModule",
+				"title": "Aplus: Create Module"
+			}
+		],
+		"snippets": [
+			{
+				"language": "restructuredtext",
+				"path": "./snippets/snippets.json"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint src --ext ts",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.47.0",
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^7.0.2",
+		"@types/node": "^13.11.0",
+		"eslint": "^6.8.0",
+		"@typescript-eslint/parser": "^2.30.0",
+		"@typescript-eslint/eslint-plugin": "^2.30.0",
+		"glob": "^7.1.6",
+		"mocha": "^7.1.2",
+		"typescript": "^3.8.3",
+		"vscode-test": "^1.3.0"
+	}
+}
