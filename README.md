@@ -19,7 +19,7 @@ also comply with the requirements mentioned in the [A+ documentation](https://ap
 
 ## Getting Started
 
-1. [Install the extension and reload VS Code if required](https://marketplace.visualstudio.com/items?itemName=jaguarfi.aplus-tools).
+1. [Install the extension and reload VS Code if required](https://marketplace.visualstudio.com/items?itemName=apluslms.aplus-tools-official).
    Remember, the name of the extension is Aplus-tools.
 2. Open your course project, create a Python virtual environment for your course, and switch to the new virtual
    environment you have just created.
